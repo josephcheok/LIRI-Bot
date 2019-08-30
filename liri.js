@@ -53,6 +53,7 @@ function search() {
 //-- END of search() function --
 
 function movieThis() {
+  console.log("Searching for Movie...".magenta);
   // Setting default value in the event of no search term defined
   if (!searchTerm) {
     searchTerm = "Mr.Nobody";
@@ -105,7 +106,7 @@ function movieThis() {
 //-- END of movieThis() function --
 
 function concertThis() {
-  console.log("Searching for Concerts!");
+  console.log("Searching for Concert...".magenta);
   var queryUrl =
     "https://rest.bandsintown.com/artists/" +
     searchTerm +
@@ -152,7 +153,7 @@ function concertThis() {
 //-- END of concertThis() function --
 
 function spotifyThis() {
-  console.log("Searching for Song!");
+  console.log("Searching for Song...".magenta);
 
   // Setting default value in the event of no search term defined
   if (!searchTerm) {
@@ -183,7 +184,7 @@ function spotifyThis() {
 
 //reads random.txt file and carries out the command and search term within
 function doThis() {
-  console.log("Doing something!");
+  console.log("Fetching Instructions...".magenta);
   fs.readFile("random.txt", "utf8", function(error, data) {
     if (error) {
       return console.log(error);
@@ -212,7 +213,7 @@ function log() {
 
     // If no error is experienced, we'll log the phrase "Content Added" to our node console.
     else {
-      console.log("Content Added!");
+      console.log("Content Logged!".magenta);
     }
   });
 }
