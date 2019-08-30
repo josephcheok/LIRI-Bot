@@ -22,7 +22,7 @@ using the search term provided by the user.
 
 ## Instructions
 
-1. For Concerts:
+### 1. For Concerts:
 
 - `node liri.js concert-this <artist/band name here>`
 
@@ -36,7 +36,7 @@ using the search term provided by the user.
 
 <img src="gif/Concert-This.gif"/>
 
-2. For Songs:
+### 2. For Songs:
 
 - `node liri.js spotify-this-song '<song name here>'`
 
@@ -54,32 +54,36 @@ using the search term provided by the user.
 
 <img src="gif/Spotify-This.gif"/>
 
-3. `node liri.js movie-this '<movie name here>'`
+### 3. For Movies:
 
-   - This will output the following information to your terminal/bash window:
+- `node liri.js movie-this '<movie name here>'`
 
-     ```
-       * Title of the movie.
-       * Year the movie came out.
-       * IMDB Rating of the movie.
-       * Rotten Tomatoes Rating of the movie.
-       * Country where the movie was produced.
-       * Language of the movie.
-       * Plot of the movie.
-       * Actors in the movie.
-     ```
+  - This will output the following information to your terminal/bash window:
 
-   - If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
+    ```
+      * Title of the movie.
+      * Year the movie came out.
+      * IMDB Rating of the movie.
+      * Rotten Tomatoes Rating of the movie.
+      * Country where the movie was produced.
+      * Language of the movie.
+      * Plot of the movie.
+      * Actors in the movie.
+    ```
+
+  - If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
 
 <img src="gif/Movie-This.gif"/>
 
-4. `node liri.js do-what-it-says`
+### 4. Instructions From Text File:
 
-   - LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
+- `node liri.js do-what-it-says`
 
-     - Example: It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
+  - LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 
-     - Edit the text in random.txt to test out the feature for movie-this and concert-this.
+    - Example: It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
+
+    - Edit the text in random.txt to test out the feature for movie-this and concert-this.
 
 <img src="gif/Text-This.gif"/>
 
