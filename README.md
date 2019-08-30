@@ -10,10 +10,14 @@ LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for mov
 
 ## Technologies
 
-The app is a javaScript function that
+The app is a javaScript function that:
+
 i. extracts pre-defined required fields
+
 ii. from entertainment based APIs using axios
+
 iii. executed via Node
+
 using the search term provided by the user.
 
 ## Instructions
