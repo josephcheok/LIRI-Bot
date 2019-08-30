@@ -1,0 +1,31 @@
+{
+  "name": "liri-bot",
+  "version": "1.0.0",
+  "description": "Searches for songs, movies and concerts!",
+  "main": "keys.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josephcheok/LIRI-Bot.git"
+  },
+  "keywords": [
+    "Songs",
+    "Movies",
+    "Concerts"
+  ],
+  "author": "Joseph Cheok",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josephcheok/LIRI-Bot/issues"
+  },
+  "homepage": "https://github.com/josephcheok/LIRI-Bot#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "colors": "^1.3.3",
+    "dotenv": "^8.1.0",
+    "moment": "^2.24.0",
+    "node-spotify-api": "^1.1.1"
+  }
+}
