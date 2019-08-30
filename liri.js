@@ -15,6 +15,7 @@ var command = nodeArgs[2];
 
 // Create an empty variable for holding the movie name
 var searchTerm = "";
+var text = "";
 
 //Initialising search
 search();
@@ -77,6 +78,8 @@ function movieThis() {
       console.log("Language: " + reply.Language.green);
       console.log("Plot: " + reply.Plot.green);
       console.log("Actors: " + reply.Actors.green);
+      text = `------------Movie Request------------\r Title: ${reply.Title}\r Release Year: ${reply.Year}\r IMDB Rating: ${reply.imdbRating}\r Rotten Tomatoes Rating: ${reply.Ratings[1].Value}\r Country produced: ${reply.Country}\r Language: ${reply.Language}\r Plot: ${reply.Plot}\r Actors: ${reply.Actors}\n\r`;
+      log();
     })
     .catch(function(error) {
       if (error.response) {
@@ -113,6 +116,7 @@ function concertThis() {
     .then(function(response) {
       var reply = response.data;
       var concertdate = moment(reply[0].datetime).format("MM/DD/YYYY");
+      console.log("Artist: " + reply[0].lineup[0].cyan);
       console.log("Venue: " + reply[0].venue.name.cyan);
       console.log(
         "Location: " +
@@ -120,8 +124,9 @@ function concertThis() {
           ", " +
           reply[0].venue.country.cyan
       );
-
       console.log("Date: " + concertdate.cyan);
+      text = `------------Concert Request------------\r Artist: ${reply[0].lineup}\r Venue: ${reply[0].venue.name}\r Location: ${reply[0].venue.city}, ${reply[0].venue.country}\r Date: ${concertdate}\n\r`;
+      log();
     })
     .catch(function(error) {
       if (error.response) {
@@ -170,6 +175,8 @@ function spotifyThis() {
         response.tracks.items[0].album.external_urls.spotify.yellow
     );
     console.log("Album: " + response.tracks.items[0].album.name.yellow);
+    text = `------------Song Request------------\r Artist: ${response.tracks.items[0].album.artists[0].name}\r Song Title: ${response.tracks.items[0].name}\r Song Link: ${response.tracks.items[0].album.external_urls.spotify}\r Album: ${response.tracks.items[0].album.name}\n\r`;
+    log();
   });
 }
 //-- END of spotifyThis() function --
@@ -193,6 +200,20 @@ function doThis() {
       }
     }
     search();
+  });
+}
+
+function log() {
+  fs.appendFile("log.txt", text, function(err) {
+    // If an error was experienced we will log it.
+    if (err) {
+      console.log(err);
+    }
+
+    // If no error is experienced, we'll log the phrase "Content Added" to our node console.
+    else {
+      console.log("Content Added!");
+    }
   });
 }
 //-- END of doThis() function --
