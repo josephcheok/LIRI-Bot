@@ -52,13 +52,19 @@ function search() {
 //-- END of search() function --
 
 function movieThis() {
-  // Then run a request with axios to the OMDB API with the movie specified
+  // Setting default value in the event of no search term defined
+  if (!searchTerm) {
+    searchTerm = "Mr.Nobody";
+  }
+
+  //Constructing the query URL for use in axios
   var queryUrl =
     "http://www.omdbapi.com/?t=" + searchTerm + "&y=&plot=short&apikey=trilogy";
 
   // This line is just to help us debug against the actual URL.
   console.log(queryUrl);
 
+  // Then run a request with axios to the OMDB API with the movie specified
   axios
     .get(queryUrl)
     .then(function(response) {
@@ -96,7 +102,7 @@ function movieThis() {
 //-- END of movieThis() function --
 
 function concertThis() {
-  console.log("Searching for concerts!");
+  console.log("Searching for Concerts!");
   var queryUrl =
     "https://rest.bandsintown.com/artists/" +
     searchTerm +
@@ -142,6 +148,12 @@ function concertThis() {
 
 function spotifyThis() {
   console.log("Searching for Song!");
+
+  // Setting default value in the event of no search term defined
+  if (!searchTerm) {
+    searchTerm = "The Sign (Ace of Base)";
+  }
+
   spotify.search({ type: "track", query: searchTerm, limit: 1 }, function(
     err,
     response
